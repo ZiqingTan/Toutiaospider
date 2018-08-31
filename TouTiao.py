@@ -2,7 +2,7 @@
 """
 Created on Tue Aug 21 16:47:31 2018
 
-@author: Administrator
+@author: Ziqing
 """
 
 from bs4 import BeautifulSoup

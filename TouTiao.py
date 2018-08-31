@@ -132,10 +132,10 @@ def get_page_main(offset,KEYWORD=config.KEYWORD):
                 
 
 if __name__ == "__main__":
-    # main(0,"街拍")
-    grous = [i*20 for i in range(config.GROUP_START,config.GROUP_END+1)]
-    pool = Pool()
-    pool.map(get_page_main,(grous))
+    pool = Pool(3)
+    for i in range(config.GROUP_START, config.GROUP_END + 1):
+        result = pool.apply_async(get_page_main,(i,))
+    result.wait()
     pool.close()
     pool.join()
     
